@@ -23,6 +23,8 @@ namespace TestingMVC.Tests
             // Act
             var response = await client.GetAsync("/");
 
+            var contentString = await response.Content.ReadAsStringAsync();
+
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
